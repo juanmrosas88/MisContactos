@@ -5,4 +5,8 @@
     <string name="e_mail">E-mail</string>
     <string name="descripcion_contacto">Descripción Contacto</string>
     <string name="siguiente">siguiente</string>
+    <string name="email">juanmrosas@gmail.com</string>
+    <string name="phone">+50 4543 040404</string>
+    <string name="name">Juan Rosas</string>
+    <string name="fecha_de_nacimiento">Fecha de Nacimiento</string>
 </resources>

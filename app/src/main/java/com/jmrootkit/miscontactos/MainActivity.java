@@ -2,7 +2,9 @@ package com.jmrootkit.miscontactos;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.DatePicker;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,5 +18,10 @@ public class MainActivity extends AppCompatActivity {
         // init
         // dpDate.init(2002, 10, 27, null);
 
+    }
+
+    public void next_onClick(View view) {
+        Intent i = new Intent(MainActivity.this, DetalleContactos.class);
+        startActivity(i);
     }
 }
