@@ -2,4 +2,5 @@
 <resources>
     <dimen name="paddingTextMain">20dp</dimen>
     <dimen name="my_size_icon">50dp</dimen>
+    <dimen name="txt_ediciondatos">20sp</dimen>
 </resources>

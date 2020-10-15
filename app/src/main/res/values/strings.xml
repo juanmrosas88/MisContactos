@@ -9,4 +9,8 @@
     <string name="phone">+50 4543 040404</string>
     <string name="name">Juan Rosas</string>
     <string name="fecha_de_nacimiento">Fecha de Nacimiento</string>
+    <string name="fecha_nac">30/09/2020</string>
+    <string name="txt_descripcion">Conocido en la Hackaton de Cordoba del año pasado</string>
+    <string name="editar_datos">editar datos</string>
+    <string name="un_mensaje_descriptivo">un mensaje descriptivo</string>
 </resources>

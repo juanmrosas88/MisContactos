@@ -31,17 +31,19 @@
             android:id="@+id/iv_nacim"
             android:layout_width="@dimen/my_size_icon"
             android:layout_height="@dimen/my_size_icon"
-
+            android:contentDescription="@string/un_mensaje_descriptivo"
             app:srcCompat="@android:drawable/ic_menu_my_calendar" />
 
         <TextView
             android:id="@+id/tc_nacim"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/phone" />
+            android:text="@string/fecha_nac"
+            android:textSize="@dimen/txt_ediciondatos" />
     </LinearLayout>
+
     <LinearLayout
-        android:id="@+id/llphone"
+        android:id="@+id/ll_phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -49,35 +51,81 @@
         app:layout_constraintTop_toBottomOf="@+id/ll_nacim">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/iv_phone"
             android:layout_width="40dp"
             android:layout_height="40dp"
+            android:contentDescription="@string/un_mensaje_descriptivo"
             app:srcCompat="@android:drawable/stat_sys_phone_call" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/tv_phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/phone" />
+            android:text="@string/phone"
+
+            android:textSize="@dimen/txt_ediciondatos" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/ll_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/llphone">
+        app:layout_constraintTop_toBottomOf="@+id/ll_phone">
 
         <ImageView
-            android:id="@+id/imageView1"
+            android:id="@+id/iv_email"
             android:layout_width="40dp"
             android:layout_height="40dp"
+
+            android:contentDescription="@string/un_mensaje_descriptivo"
             app:srcCompat="@android:drawable/ic_dialog_email" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/tv_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/email" />
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="@string/email"
+            android:textSize="@dimen/txt_ediciondatos" />
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/ll_email">
+
+        <ImageView
+            android:id="@+id/iv_desc"
+            android:layout_width="@dimen/my_size_icon"
+            android:layout_height="@dimen/my_size_icon"
+            android:contentDescription="@string/un_mensaje_descriptivo"
+            app:srcCompat="@android:drawable/sym_action_chat" />
+
+        <TextView
+            android:id="@+id/tv_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/txt_descripcion"
+            android:textSize="@dimen/txt_ediciondatos" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/myback"
+        android:onClick="edicion_onClick"
+        android:text="@string/editar_datos"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_desc" />
 </androidx.constraintlayout.widget.ConstraintLayout>
