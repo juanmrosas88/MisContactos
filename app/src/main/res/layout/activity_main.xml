@@ -9,12 +9,17 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout2"
+        android:id="@+id/til_nombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/myback"
         android:paddingStart="@dimen/paddingTextMain"
         android:paddingEnd="@dimen/paddingTextMain"
+        android:singleLine="true"
+        app:counterEnabled="true"
+        app:counterMaxLength="30"
+        app:errorEnabled="true"
+
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -33,7 +38,7 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/til_nombre" />
 
     <DatePicker
         android:id="@+id/dpDate"
@@ -48,56 +53,70 @@
         app:layout_constraintTop_toBottomOf="@+id/fecha" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
+        android:id="@+id/til_phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/myback"
         android:paddingStart="@dimen/paddingTextMain"
         android:paddingEnd="@dimen/paddingTextMain"
+        app:counterEnabled="true"
+        app:counterMaxLength="10"
+        app:errorEnabled="true"
         app:layout_constraintTop_toBottomOf="@+id/dpDate">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/telefono" />
+            android:hint="@string/telefono"
+            android:ems="10"
+            android:inputType="phone"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout3"
+        android:id="@+id/til_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/myback"
         android:paddingStart="@dimen/paddingTextMain"
         android:paddingEnd="@dimen/paddingTextMain"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+        app:errorEnabled="true"
+        app:hintTextAppearance="@style/Hint"
+        app:layout_constraintTop_toBottomOf="@+id/til_phone">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/e_mail" />
+            android:hint="@string/e_mail"
+            android:inputType="textEmailAddress"
+            android:singleLine="true"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/myback"
         android:paddingStart="@dimen/paddingTextMain"
         android:paddingEnd="@dimen/paddingTextMain"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
+        app:counterEnabled="true"
+        app:counterMaxLength="100"
+        app:layout_constraintTop_toBottomOf="@+id/til_email">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tie_descripcion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/descripcion_contacto" />
+            android:hint="@string/descripcion_contacto"
+            android:inputType="textMultiLine" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/myback"
         android:text="@string/siguiente"
         android:onClick="next_onClick"
+        android:theme="@style/MiBotonRaised"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

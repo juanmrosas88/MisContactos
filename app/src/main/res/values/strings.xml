@@ -13,4 +13,10 @@
     <string name="txt_descripcion">Conocido en la Hackaton de Cordoba del año pasado</string>
     <string name="editar_datos">editar datos</string>
     <string name="un_mensaje_descriptivo">un mensaje descriptivo</string>
+    <string name="sin_datos">Sin datos</string>
+    <string name="pNombre">Nombre</string>
+    <string name="pFecha">Fecha</string>
+    <string name="pTelefono">Telefono</string>
+    <string name="pEmail">Email</string>
+    <string name="pDescripcion">Descripcion</string>
 </resources>
