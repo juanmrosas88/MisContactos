@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     Contacto contacto;
 
     private TextInputLayout tilNombre, tilTelefono, tilCorreo, tilDesc;
+    String nombre, fecha, phone, email, descripcion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +36,8 @@ public class MainActivity extends AppCompatActivity {
         if(   tilDesc.getEditText() != null){
             tilDesc.getEditText().setText("");
         }
+        traerDatosyllenar();
 
-        // init
-        // dpDate.init(2002, 10, 27, null);
 
     }
 
@@ -47,10 +47,41 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onResume() {
-            super.onResume();
-            tilDesc.getEditText().setText("");
+
+    public void traerDatosyllenar() {
+        Bundle parametros = getIntent().getExtras();
+
+        if (parametros != null) {
+            nombre = parametros.getString(getString(R.string.pNombre));
+            fecha = parametros.getString(getString(R.string.pFecha));
+            phone = parametros.getString(getString(R.string.pTelefono));
+            email = parametros.getString(getString(R.string.pEmail));
+            descripcion = parametros.getString(getString(R.string.pDescripcion));
+
+            cargarEditText(nombre, fecha, phone, email, descripcion);
+        }
+    }
+
+    private void cargarEditText(String nombre, String fecha, String phone, String email, String descripcion) {
+
+        String[] textElements = fecha.split("/");
+        int dia, mes, anio;
+        dia =  Integer.parseInt(textElements[2]);
+        mes = Integer.parseInt(textElements[1]);
+        anio =  Integer.parseInt(textElements[0]);
+
+        try {
+            tilNombre.getEditText().setText(nombre);
+            dpDate.init(anio, mes - 1, dia, null);
+            tilTelefono.getEditText().setText(phone);
+            tilCorreo.getEditText().setText(email);
+            tilDesc.getEditText().setText(descripcion);
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+
+        }
+
+
     }
 
     private boolean esNombreValido(String nombre) {
@@ -88,13 +119,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void validarDatos() {
-        String nombre = tilNombre.getEditText().getText().toString();
-        String fecha = (dpDate.getDayOfMonth() + "/" +//month is 0 based
-                dpDate.getMonth() + 1) + "/" +
-                dpDate.getYear();
-        String phone = tilTelefono.getEditText().getText().toString();
-        String email = tilCorreo.getEditText().getText().toString();
-        String descripcion = getString(R.string.sin_datos);
+
+
+
+        nombre = tilNombre.getEditText().getText().toString();
+        fecha = (dpDate.getDayOfMonth() + "/" + (dpDate.getMonth() + 1) + "/" + dpDate.getYear());
+        phone = tilTelefono.getEditText().getText().toString();
+        email = tilCorreo.getEditText().getText().toString();
+        descripcion = getString(R.string.sin_datos);
+
         if (tilDesc.getEditText() != null) {
             if (!tilDesc.getEditText().getText().toString().equals("")) {
                 descripcion = tilDesc.getEditText().getText().toString();

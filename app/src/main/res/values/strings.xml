@@ -19,4 +19,5 @@
     <string name="pTelefono">Telefono</string>
     <string name="pEmail">Email</string>
     <string name="pDescripcion">Descripcion</string>
+    <string name="enviado_desde">Enviado desde la app Mis Contactos</string>
 </resources>

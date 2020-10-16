@@ -1,8 +1,11 @@
 package com.jmrootkit.miscontactos;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -67,15 +70,23 @@ public class DetalleContactos extends AppCompatActivity {
     }
 
     public void llamar(View v) {
-        startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel: " + Telefono)));
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(DetalleContactos.this, new String[]{Manifest.permission.CALL_PHONE}, 101);
 
+            return;
+        }
+        Intent callIntent = new Intent(Intent.ACTION_CALL);
+        callIntent.setData(Uri.parse("tel:" + Telefono));
+        startActivity(callIntent);
     }
 
     public void enviarEmail(View v) {
-        Intent emailIntent = new Intent(Intent.ACTION_SEND);
-        emailIntent.setData(Uri.parse("mailto:"));
-        emailIntent.putExtra(Intent.EXTRA_EMAIL, Email);
-        startActivity(Intent.createChooser(emailIntent, "Email "));
+
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.enviado_desde));
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{Email});
+        startActivity(intent);
 
     }
 }
