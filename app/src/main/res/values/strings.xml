@@ -20,4 +20,6 @@
     <string name="pEmail">Email</string>
     <string name="pDescripcion">Descripcion</string>
     <string name="enviado_desde">Enviado desde la app Mis Contactos</string>
+    <string name="descripcion_usuario">Imagen del usuario</string>
+    <string name="lista_de_contactos">lista de contactos</string>
 </resources>

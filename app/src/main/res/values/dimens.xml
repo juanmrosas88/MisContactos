@@ -3,4 +3,7 @@
     <dimen name="paddingTextMain">20dp</dimen>
     <dimen name="my_size_icon">50dp</dimen>
     <dimen name="txt_ediciondatos">20sp</dimen>
+    <dimen name="actvity_vertical_margin">16dp</dimen>
+    <dimen name="corner_radius_cardview">4dp</dimen>
+    <dimen name="nombre_cardview">20sp</dimen>
 </resources>
