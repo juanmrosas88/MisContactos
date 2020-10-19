@@ -6,15 +6,18 @@ public class Contacto {
     private String phone;
     private String email;
     private String descripcion;
+    private int foto;
 
-    public Contacto(String nombre, String fecha, String phone, String email) {
+    public Contacto(int foto, String nombre, String fecha, String phone, String email) {
+        this.foto = foto;
         this.nombre = nombre;
         this.fecha = fecha;
         this.phone = phone;
         this.email = email;
     }
 
-    public Contacto(String nom, String fe, String ph, String email, String desc) {
+    public Contacto(int foto, String nom, String fe, String ph, String email, String desc) {
+        this.foto = foto;
         this.nombre = nom;
         this.fecha = fe;
         this.phone = ph;
@@ -61,5 +64,13 @@ public class Contacto {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public int getFoto() {
+        return foto;
+    }
+
+    public void setFoto(int foto) {
+        this.foto = foto;
     }
 }
