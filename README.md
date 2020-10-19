@@ -4,5 +4,5 @@
  
 
 
-![](https://github.com/juanmrosas88/MisContactos/screenshot_Mis_contactos_detallecontacto.png)
+![Screenshot](https://github.com/juanmrosas88/MisContactos/blob/master/screenshot_Mis_contactos_detallecontacto.PNG)
 
