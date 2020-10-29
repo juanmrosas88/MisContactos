@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         tilTelefono = (TextInputLayout) findViewById(R.id.til_phone);
         tilCorreo = (TextInputLayout) findViewById(R.id.til_email);
         tilDesc = (TextInputLayout) findViewById(R.id.til_desc);
-        if(   tilDesc.getEditText() != null){
+        if (tilDesc.getEditText() != null) {
             tilDesc.getEditText().setText("");
         }
         traerDatosyllenar();
@@ -64,11 +64,19 @@ public class MainActivity extends AppCompatActivity {
 
     private void cargarEditText(String nombre, String fecha, String phone, String email, String descripcion) {
 
-        String[] textElements = fecha.split("/");
-        int dia, mes, anio;
-        dia =  Integer.parseInt(textElements[2]);
-        mes = Integer.parseInt(textElements[1]);
-        anio =  Integer.parseInt(textElements[0]);
+
+        int dia = 01;
+        int mes = 03;
+        int anio = 2020;
+        try {
+            String[] textElements = fecha.split("/");
+            dia = Integer.parseInt(textElements[2]);
+            mes = Integer.parseInt(textElements[1]);
+            anio = Integer.parseInt(textElements[0]);
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+
+        }
 
         try {
             tilNombre.getEditText().setText(nombre);
@@ -121,7 +129,6 @@ public class MainActivity extends AppCompatActivity {
     private void validarDatos() {
 
 
-
         nombre = tilNombre.getEditText().getText().toString();
         fecha = (dpDate.getDayOfMonth() + "/" + (dpDate.getMonth() + 1) + "/" + dpDate.getYear());
         phone = tilTelefono.getEditText().getText().toString();
@@ -146,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void enviarDatos(String nom, String fe, String ph, String email, String desc) {
-        contacto = new Contacto(nom, fe, ph, email, desc);
+        contacto = new Contacto(R.drawable.profile, nom, fe, ph, email, desc);
 
         Intent i = new Intent(MainActivity.this, DetalleContactos.class);
         i.putExtra(getString(R.string.pNombre), contacto.getNombre());
@@ -162,5 +169,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void verlistas_onClick(View view) {
 
+        Intent i = new Intent(MainActivity.this, ListadoContactos.class);
+
+        startActivity(i);
     }
 }
