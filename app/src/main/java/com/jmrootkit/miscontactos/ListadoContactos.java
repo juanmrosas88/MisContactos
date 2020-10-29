@@ -13,6 +13,7 @@ public class ListadoContactos extends AppCompatActivity {
 
     ArrayList<Contacto> contactos;
     private RecyclerView listadecontactos;
+    ContactoAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +36,7 @@ public class ListadoContactos extends AppCompatActivity {
     }
 
     private void inicializa_adaptador() {
-        ContactoAdapter adapter = new ContactoAdapter(contactos);
+        adapter = new ContactoAdapter(contactos, this);
         listadecontactos.setAdapter(adapter);
 
     }

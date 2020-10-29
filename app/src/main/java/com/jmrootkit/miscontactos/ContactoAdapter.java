@@ -1,10 +1,12 @@
 package com.jmrootkit.miscontactos;
 
+import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,10 +16,16 @@ import java.util.ArrayList;
 public class ContactoAdapter extends  RecyclerView.Adapter<ContactoAdapter.ContactoViewHolder>{
 
 
-    public ContactoAdapter(ArrayList<Contacto> contactos){
-        this.contactos = contactos;
-    }
+
+
     ArrayList<Contacto> contactos;
+    Activity activity;
+
+    public ContactoAdapter(ArrayList<Contacto> contactos, Activity activity){
+        this.contactos = contactos;
+        this.activity = activity;
+    }
+
     @NonNull
     @Override //Inflar el layout y pasarlo al viewholder para que obtenga los views
     public ContactoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -27,15 +35,25 @@ public class ContactoAdapter extends  RecyclerView.Adapter<ContactoAdapter.Conta
     }
 
     @Override //asocia cada elemento de nuestra lista con cada view
-    public void onBindViewHolder(@NonNull ContactoViewHolder contactoViewHolder, int position) {
+    public void onBindViewHolder(@NonNull final ContactoViewHolder contactoViewHolder, int position) {
 
-        Contacto contacto = contactos.get(position);
+        final Contacto contacto = contactos.get(position);
         contactoViewHolder.imgFotoA.setImageResource(contacto.getFoto());
         contactoViewHolder.tvNombreA.setText(contacto.getNombre());
         contactoViewHolder.tvDateA.setText(contacto.getFecha());
         contactoViewHolder.tvTelefonoA.setText(contacto.getPhone());
         contactoViewHolder.tvEmailA.setText(contacto.getEmail());
         contactoViewHolder.tvDescripcionA.setText(contacto.getDescripcion());
+
+        contactoViewHolder.imgFotoA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Toast.makeText(activity, contacto.getNombre(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
 
     }
 

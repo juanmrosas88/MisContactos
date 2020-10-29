@@ -52,13 +52,19 @@ public class MainActivity extends AppCompatActivity {
         Bundle parametros = getIntent().getExtras();
 
         if (parametros != null) {
-            nombre = parametros.getString(getString(R.string.pNombre));
-            fecha = parametros.getString(getString(R.string.pFecha));
-            phone = parametros.getString(getString(R.string.pTelefono));
-            email = parametros.getString(getString(R.string.pEmail));
-            descripcion = parametros.getString(getString(R.string.pDescripcion));
+            if (parametros.getString(getString(R.string.pNombre)) != null) {
+                nombre = parametros.getString(getString(R.string.pNombre));
+                if (nombre.equals("")) {
+                    fecha = parametros.getString(getString(R.string.pFecha));
+                    phone = parametros.getString(getString(R.string.pTelefono));
+                    email = parametros.getString(getString(R.string.pEmail));
+                    descripcion = parametros.getString(getString(R.string.pDescripcion));
 
-            cargarEditText(nombre, fecha, phone, email, descripcion);
+                    cargarEditText(nombre, fecha, phone, email, descripcion);
+                }
+
+            }
+
         }
     }
 
