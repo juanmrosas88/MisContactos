@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "889289550743",
+    "firebase_url": "https://miscontactos-bb61e.firebaseio.com",
+    "project_id": "miscontactos-bb61e",
+    "storage_bucket": "miscontactos-bb61e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:889289550743:android:7d41b5dc1ad3673c9bf2d2",
+        "android_client_info": {
+          "package_name": "com.jmrootkit.miscontactos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "889289550743-59rpf455ckvu7t0fpkl078ji3va79m6p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABZvGK_AHxStCsxkRnq24Lp5EXK-gU1qQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "889289550743-59rpf455ckvu7t0fpkl078ji3va79m6p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
