@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         if (parametros != null) {
             if (parametros.getString(getString(R.string.pNombre)) != null) {
                 nombre = parametros.getString(getString(R.string.pNombre));
-                if (nombre.equals("")) {
+                if (!nombre.equals("")) {
                     fecha = parametros.getString(getString(R.string.pFecha));
                     phone = parametros.getString(getString(R.string.pTelefono));
                     email = parametros.getString(getString(R.string.pEmail));

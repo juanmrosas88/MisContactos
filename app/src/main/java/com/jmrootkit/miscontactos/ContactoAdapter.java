@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -53,8 +54,13 @@ public class ContactoAdapter extends  RecyclerView.Adapter<ContactoAdapter.Conta
             }
         });
 
-
-
+        contactoViewHolder.btnLike.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(activity, "LIKE it " + contacto.getNombre(), Toast.LENGTH_SHORT).show();
+            }
+        });
+        
     }
 
     @Override
@@ -70,6 +76,8 @@ public class ContactoAdapter extends  RecyclerView.Adapter<ContactoAdapter.Conta
         private TextView tvTelefonoA;
         private TextView tvEmailA;
         private TextView tvDescripcionA;
+        private ImageButton btnLike;
+
 
         public ContactoViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -79,6 +87,7 @@ public class ContactoAdapter extends  RecyclerView.Adapter<ContactoAdapter.Conta
             tvTelefonoA = (TextView) itemView.findViewById(R.id.tvTelefonoCV);
             tvEmailA = (TextView) itemView.findViewById(R.id.tvEmailCV);
             tvDescripcionA = (TextView) itemView.findViewById(R.id.tvDescripcionCV);
+            btnLike= (ImageButton) itemView.findViewById(R.id.btnLike);
         }
 
 

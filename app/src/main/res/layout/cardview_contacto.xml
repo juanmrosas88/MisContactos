@@ -60,6 +60,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/pDescripcion" />
+
+            <ImageButton
+                android:id="@+id/btnLike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:background="@drawable/android_ic_like"
+                />
+
+
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>
