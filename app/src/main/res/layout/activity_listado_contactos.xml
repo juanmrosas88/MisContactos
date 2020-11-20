@@ -6,32 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".ListadoContactos">
 
+
+    <LinearLayout
+        android:id="@+id/lyid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_pushUnico"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="push_unico_onClick"
+            android:text="@string/pushunico"
+            android:theme="@style/MiBotonRaised" />
+
+        <Button
+            android:id="@+id/btn_pushBroadcast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="push_broad_onClick"
+            android:text="@string/pushbroad"
+            android:theme="@style/MiBotonRaised" />
+
+
+    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvContactos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        />
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_below="@+id/rvContactos"
-    android:orientation="vertical">
-    <Button
-        android:id="@+id/btn_pushUnico"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="push_unico_onClick"
-        android:text="@string/pushunico"
-        android:theme="@style/MiBotonRaised" />
-    <Button
-        android:id="@+id/btn_pushBroadcast"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="push_broad_onClick"
-        android:text="@string/pushbroad"
-        android:theme="@style/MiBotonRaised"/>
-
-
-
-</LinearLayout>
+        android:layout_below="@+id/lyid" />
 </RelativeLayout>

@@ -8,6 +8,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.view.View;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 
 public class ListadoContactos extends AppCompatActivity {
@@ -16,6 +19,7 @@ public class ListadoContactos extends AppCompatActivity {
     private RecyclerView listadecontactos;
     ContactoAdapter adapter;
 
+    Integer contador =0 ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +57,13 @@ public class ListadoContactos extends AppCompatActivity {
     }
 
     public void push_unico_onClick(View view) {
+        // Write a message to the database
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("message");
+
+        myRef.setValue("Hello, World!" + contador);
+        contador++;
+
     }
 
     public void push_broad_onClick(View view) {
